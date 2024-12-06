@@ -1,8 +1,5 @@
 # my practice OOP
 
-from httpx import post
-
-
 class Person:
     """класс для создания персоны 'человек', также для изменения и хранения информации о конкретном человеке"""
     def __init__(self, name=None, lastname=None, age=None, gender=None, kids=None, job=None, adress=None, 
