@@ -152,3 +152,5 @@ class Jobs(Worcker):
     def set_price(self, price):
         self.info['price'] = price
 
+
+# comment hello
