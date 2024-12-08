@@ -73,6 +73,8 @@ class Person:
             self.gender = gender
         else:
             raise ValueError('Введены неккоректные данные')
+        
+    
 
     
  
@@ -80,31 +82,33 @@ class Person:
 class Worcker(Person):
     """класс для представления, создания или изменения информации о работнике"""
     def __init__(self, post=None, salery=None, expirience=None, level=None):
-        super().__init__(name=None, lastname=None, age=None, gender=None, kids=None, job=None, adress=None, 
-                        profession=None)
+        super().__init__()
         self.post = post
         self.salery = salery
         self.expirience = expirience
         self.level = level
 
-    # function for return information about worcker
-    def show_info(self):
-        info = {'name': self.name, 'lastname': self.last_name, 'age': self.age, 'gender': self.gender, 
-                'kids': self.kids, 'job': self.job, 'adress': self.adress, 'profession': self.profession, 
-                'post': self.post, 'salery': self.salery, 'expirience': self.expirience, 'level': self.level}
+
+    # function for show info about worcker
+    def get_info(self):
+        info = {'gender': self.gender, 'Name': self.name, 'lastname': self.last_name, 'Age': self.age, 
+                'Kids': self.kids, 'job': self.job, 'adress': self.adress, 'profession': self.profession, 
+                'post': self.post, 'salery': self.salery, 'expirience': self.expirience, 'level': self.level
+                }
         return info
 
 
     # function for change or add worcker's post
     def set_post(self, post):
         self.post = post
+        self.info['post'] = post
 
     # function for change or add worcker's salery
     def set_salery(self, salery):
         if type(salery) is int or type(salery) is float:
             self.salery = salery
         else:
-            raise ValueError('ВВедите число')
+            raise ValueError('Введите число')
 
     # function for change or add worcker's expirience
     def set_expirience(self, expirience):
@@ -114,4 +118,37 @@ class Worcker(Person):
     def set_level(self, level):
         self.level = level
 
+
+
+class Jobs(Worcker):
+    def __init__(self, jobs=None, time=None, price=None):
+        super().__init__()
+        self.jobs = jobs
+        self.time = time
+        self.price = price
+        
+    
+    # function for show info about worcker
+    def get_info(self):
+        info = {'gender': self.gender, 'Name': self.name, 'lastname': self.last_name, 'Age': self.age, 
+                'Kids': self.kids, 'job': self.job, 'adress': self.adress, 'profession': self.profession, 
+                'post': self.post, 'salery': self.salery, 'expirience': self.expirience, 'level': self.level,
+                'jobs': self.jobs, 'time': self.time, 'price': self.price
+                }
+        return info
+
+
+    # function for change and set jobs
+    def set_jobs(self, jobs):
+        self.info['jobs'] = jobs
+
+    
+    # function for change and set time
+    def set_time(self, time):
+        self.info['time'] = time
+
+
+    # function for change and set price
+    def set_price(self, price):
+        self.info['price'] = price
 
