@@ -11,7 +11,9 @@ gender: female
 Name: Victoria
 lastname: Leshova
 Age: 25
-Kids: ['joey', 'Eshly']
+Kids:
+- joey
+- Eshly
 job: None
 adress: None
 profession: None
