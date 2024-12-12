@@ -1,0 +1,18 @@
+gender: male
+Name: Vasya
+lastname: Popov
+Age: 30
+Kids: None
+job: None
+adress: None
+profession: None
+
+gender: female
+Name: Victoria
+lastname: Leshova
+Age: 25
+Kids: ['joey', 'Eshly']
+job: None
+adress: None
+profession: None
+
