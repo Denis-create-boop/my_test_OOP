@@ -1,4 +1,5 @@
 # my practice OOP
+import json
 
 class Person:
     """класс для создания персоны 'человек', также для изменения и хранения информации о конкретном человеке"""
@@ -169,15 +170,12 @@ c = Writer()
 info_a = a.get_info()
 info_b = b.get_info()
 
-def writer(inf, person):
-    for k, v in inf.items():
-        if k == 'Kids' and v != None:
-            person.write(f'{k}:\n')
-            for V in v:
-                person.write(f'- {V}\n')
-        else:
-            person.write(f'{k}: {v}\n')
-    person.write('\n')
+def writer(inf):
+    with open('person.txt', 'a+') as f:
+        json.dump(inf, f)
+        f.write('\n')
+    
 
-writer(info_a, c)
-writer(info_b, c)
+writer(info_a)
+writer(info_b)
+
