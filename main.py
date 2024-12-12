@@ -154,3 +154,29 @@ class Jobs(Worcker):
 
 
 # comment hello
+
+
+class Writer:
+
+    def write(self, writer):
+        with open('person.txt', 'a+') as f:
+            f.write(writer)
+
+a = Person('Vasya', 'Popov', 30, 'male')
+b = Person('Victoria', 'Leshova', 25, 'female', ['joey', 'Eshly'])
+
+c = Writer()
+info_a = a.get_info()
+info_b = b.get_info()
+
+def writer(inf, person):
+    for k, v in inf.items():
+        if k == 'kids':
+            for K, V in k.items():
+                person.write(f'- {V}\n')
+        else:
+            person.write(f'{k}: {v}\n')
+    person.write('\n')
+
+writer(info_a, c)
+writer(info_b, c)
