@@ -75,11 +75,9 @@ class Person:
         else:
             raise ValueError('Введены неккоректные данные')
         
-    
 
-    
  
-# create class Woecker and inherited from class Person
+# created class Woecker and inherited from class Person
 class Worcker(Person):
     """класс для представления, создания или изменения информации о работнике"""
     def __init__(self, post=None, salery=None, expirience=None, level=None):
@@ -154,19 +152,11 @@ class Jobs(Worcker):
         self.info['price'] = price
 
 
-# comment hello
-
-
-class Writer:
-
-    def write(self, writer):
-        with open('person.txt', 'a+') as f:
-            f.write(writer)
-
 a = Person('Vasya', 'Popov', 30, 'male')
 b = Person('Victoria', 'Leshova', 25, 'female', ['joey', 'Eshly'])
 
-c = Writer()
+p1 = Worcker('developer', 30000)
+
 info_a = a.get_info()
 info_b = b.get_info()
 
@@ -176,6 +166,8 @@ def writer(inf):
         f.write('\n')
     
 
-writer(info_a)
-writer(info_b)
+for k, v in p1.get_info().items():
+    if v not in info_a.values():
+        info_a[k] = v
+
 
